@@ -75,7 +75,7 @@ func runFileCmd(f FileItem) {
 	s := strings.ReplaceAll(flagFileCmd, "%f", f.FullPath)
 	split := strings.Split(s, " ")
 
-	cmd := exec.Command(split[0], split...)
+	cmd := exec.Command(split[0], split[1:]...)
 
 	log.Println(cmd.String())
 
